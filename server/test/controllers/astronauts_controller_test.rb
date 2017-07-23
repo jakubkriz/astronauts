@@ -6,43 +6,33 @@ class AstronautsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get index" do
-    get astronauts_url
-    assert_response :success
-  end
-
-  test "should get new" do
-    get new_astronaut_url
+    get astronauts_url, as: :json
     assert_response :success
   end
 
   test "should create astronaut" do
     assert_difference('Astronaut.count') do
-      post astronauts_url, params: { astronaut: { birthdate: @astronaut.birthdate, firstname: @astronaut.firstname, lastname: @astronaut.lastname, superpower: @astronaut.superpower } }
+      post astronauts_url, params: { astronaut: { birthdate: @astronaut.birthdate, firstname: @astronaut.firstname, lastname: @astronaut.lastname, superpower: @astronaut.superpower } }, as: :json
     end
 
-    assert_redirected_to astronaut_url(Astronaut.last)
+    assert_response 201
   end
 
   test "should show astronaut" do
-    get astronaut_url(@astronaut)
-    assert_response :success
-  end
-
-  test "should get edit" do
-    get edit_astronaut_url(@astronaut)
+    get astronaut_url(@astronaut), as: :json
     assert_response :success
   end
 
   test "should update astronaut" do
-    patch astronaut_url(@astronaut), params: { astronaut: { birthdate: @astronaut.birthdate, firstname: @astronaut.firstname, lastname: @astronaut.lastname, superpower: @astronaut.superpower } }
-    assert_redirected_to astronaut_url(@astronaut)
+    patch astronaut_url(@astronaut), params: { astronaut: { birthdate: @astronaut.birthdate, firstname: @astronaut.firstname, lastname: @astronaut.lastname, superpower: @astronaut.superpower } }, as: :json
+    assert_response 200
   end
 
   test "should destroy astronaut" do
     assert_difference('Astronaut.count', -1) do
-      delete astronaut_url(@astronaut)
+      delete astronaut_url(@astronaut), as: :json
     end
 
-    assert_redirected_to astronauts_url
+    assert_response 204
   end
 end
