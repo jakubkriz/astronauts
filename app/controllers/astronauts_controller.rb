@@ -28,10 +28,10 @@ class AstronautsController < ApplicationController
 
     respond_to do |format|
       if @astronaut.save
-        format.html { redirect_to @astronaut, notice: 'Astronaut was successfully created.' }
+        # format.html { redirect_to @astronaut, notice: 'Astronaut was successfully created.' }
         format.json { render :show, status: :created, location: @astronaut }
       else
-        format.html { render :new }
+        # format.html { render :new }
         format.json { render json: @astronaut.errors, status: :unprocessable_entity }
       end
     end
@@ -42,10 +42,10 @@ class AstronautsController < ApplicationController
   def update
     respond_to do |format|
       if @astronaut.update(astronaut_params)
-        format.html { redirect_to @astronaut, notice: 'Astronaut was successfully updated.' }
+        # format.html { redirect_to @astronaut, notice: 'Astronaut was successfully updated.' }
         format.json { render :show, status: :ok, location: @astronaut }
       else
-        format.html { render :edit }
+        # format.html { render :edit }
         format.json { render json: @astronaut.errors, status: :unprocessable_entity }
       end
     end
@@ -56,7 +56,7 @@ class AstronautsController < ApplicationController
   def destroy
     @astronaut.destroy
     respond_to do |format|
-      format.html { redirect_to astronauts_url, notice: 'Astronaut was successfully destroyed.' }
+      # format.html { redirect_to astronauts_url, notice: 'Astronaut was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
