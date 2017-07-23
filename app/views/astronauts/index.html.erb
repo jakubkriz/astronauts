@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Astronauts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Firstname</th>
+      <th>Lastname</th>
+      <th>Birthdate</th>
+      <th>Superpower</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @astronauts.each do |astronaut| %>
+      <tr>
+        <td><%= astronaut.firstname %></td>
+        <td><%= astronaut.lastname %></td>
+        <td><%= astronaut.birthdate %></td>
+        <td><%= astronaut.superpower %></td>
+        <td><%= link_to 'Show', astronaut %></td>
+        <td><%= link_to 'Edit', edit_astronaut_path(astronaut) %></td>
+        <td><%= link_to 'Destroy', astronaut, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Astronaut', new_astronaut_path %>
