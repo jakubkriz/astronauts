@@ -1,3 +1,4 @@
+<h1 class="col-sm-offset-2">{{pageTitle}}</h1>
 <form [formGroup]="astronautForm" class="form-horizontal">
   <div class="form-group">
     <label for="firstname" class="col-sm-2 control-label">First Name</label>
@@ -29,10 +30,10 @@
 
   <div class="form-group">
     <div class="col-sm-offset-2 col-sm-4">
+      <button class="btn btn-default" type="back" (click)="goBack()">Back</button>
       <button class="btn btn-success" type="submit" [disabled]="astronautForm.invalid" (click)="onSubmit(astronautForm)">
         Send
       </button>
-      <button class="btn btn-default" type="back" (click)="goBack()">Back</button>
     </div>
   </div>
 </form>

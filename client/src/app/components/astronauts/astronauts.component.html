@@ -1,5 +1,8 @@
-<div class="container">
-  <button class="btn btn-default" routerLink="/astronaut/new">Add New Astronaut</button>
+<h1>{{pageTitle}}</h1>
+<div class="row">
+  <button id="new" class="btn btn-default" routerLink="/astronaut/new">Add Astronaut</button>
+</div>
+<div class="row">
   <table class="table table-striped table-responsive table-bordered">
     <thead>
       <tr>
@@ -18,14 +21,15 @@
         <td>{{astronaut.superpower}}</td>
         <td>
           <button
-            class="btn btn-delete"
+            id="delete"
+            class="btn btn-danger"
             mwlConfirmationPopover
             [title]="title"
             [message]="message"
             placement="top"
             (confirm)="delete(astronaut)"
             (cancel)="cancelClicked = true">
-            x
+            <span class="glyphicon glyphicon-trash"></span>
           </button>
         </td>
       </tr>

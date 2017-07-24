@@ -13,6 +13,7 @@ import { AstronautService } from '../../services/astronaut.service'
 export class AstronautNewComponent implements OnInit {
   astronaut: Astronaut;
   astronautForm: FormGroup;
+  public pageTitle:string;
 
   constructor(
     private location: Location, 
@@ -20,6 +21,7 @@ export class AstronautNewComponent implements OnInit {
     private astronautService:AstronautService) { }
 
   ngOnInit() {
+    this.pageTitle = 'New Astronaut';
     this.astronautForm = this.fb.group({
       firstname: ['', Validators.required],
       lastname: ['', Validators.required],
