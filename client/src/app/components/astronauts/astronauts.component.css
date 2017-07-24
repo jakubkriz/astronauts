@@ -1,0 +1,31 @@
+  .selected {
+    background-color: #CFD8DC !important;
+    color: white;
+  }
+  .astronauts {
+    margin: 0 0 2em 0;
+    list-style-type: none;
+    padding: 0;
+    width: 15em;
+  }
+  .astronauts li {
+    position: relative;
+    left: 0;
+    background-color: #EEE;
+    margin: .5em;
+    padding: .3em 0;
+    height: 1.6em;
+    border-radius: 4px;
+  }
+  .astronauts .text {
+    position: relative;
+    top: -3px;
+  }
+  
+button.delete {
+  float:right;
+  margin-top: 2px;
+  margin-right: .8em;
+  background-color: gray !important;
+  color:white;
+}
