@@ -12,7 +12,7 @@
     <tr *ngFor="let astronaut of astronauts">
       <td>{{astronaut.firstname}}</td>
       <td>{{astronaut.lastname}}</td>
-      <td>{{astronaut.birthdate}}</td>
+      <td>{{astronaut.birthdate | date: 'dd.MM.yyyy'}}</td>
       <td>{{astronaut.superpower}}</td>
       <td>
         <button class="btn btn-delete" (click)="delete(astronaut)">x</button>
