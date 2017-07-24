@@ -1,0 +1,12 @@
+.row {
+  padding: 0.5em;
+}
+
+td, th {
+  text-align: center;
+}  
+
+button#new {
+  background-color: #f9f9f9 !important; 
+  color: black;
+}
