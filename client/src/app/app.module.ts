@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
+import { ConfirmationPopoverModule } from 'angular-confirmation-popover';
+
 import { AppComponent } from './app.component';
 
 import { AstronautService } from './services/astronaut.service';
@@ -20,7 +22,10 @@ import { AppRoutingModule } from './modules/app-routing.module';
     BrowserModule,
     ReactiveFormsModule,
     HttpModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ConfirmationPopoverModule.forRoot({
+      confirmButtonType: 'danger' 
+    })
   ],
   providers: [AstronautService],
   bootstrap: [AppComponent]

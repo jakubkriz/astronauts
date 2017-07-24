@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+
 import { AstronautService } from '../../services/astronaut.service'
 import { Astronaut } from '../../models/astronaut';
 
@@ -9,12 +10,18 @@ import { Astronaut } from '../../models/astronaut';
 })
 export class AstronautsComponent implements OnInit {
   astronauts: Astronaut[];
+  public title: string;
+  public message: string;
+  public cancelClicked: boolean;
 
   constructor(private astronautService:AstronautService) {
   }
 
   ngOnInit() {
     this.astronautService.getAstronauts().then(astronauts => this.astronauts = astronauts);
+    this.title = 'Delete astronaut';
+    this.message = 'Do you really want to delete this astronaut?';
+    this.cancelClicked = false;
   }
 
   delete(astronaut: Astronaut): void {
